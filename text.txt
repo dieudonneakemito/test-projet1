@@ -1,0 +1,3 @@
+calcul de la moyenne d'une classe...
+affichage par ordre de reussite 
+ne calcul pas ceux qui ont un vide

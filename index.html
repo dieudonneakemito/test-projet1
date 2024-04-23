@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Calcul et affichage de la moyenne</h1>
+    <p>
+        Lancez la console pour voir le resultat (appuyez sur la touche f12 de votre clavier...)
+    </p>
+
+    <script>
+        
+
+//CALCUL ET AFFICHAGE DE LA MOYENNE
+
+let etudiants = [
+    {
+        nom : 'kinkela',
+        cotes : [5,6,8,7,9,7]
+    },
+    {
+        nom : 'babakidi',
+        cotes : [8,5,6,10,9,5]
+    },
+    {
+        nom : 'kadima',
+        cotes : [7,9,5,10,7]
+    },
+    {
+        nom : 'akemito',
+        cotes : [10,10,8,8,9,5]
+    }
+]
+
+//fonction moyenne
+const moyenne = function(cotes) {
+    let som = 0
+    if (cotes.length === 6) {
+        for (let cote of cotes ){
+            som = som + cote 
+        }
+        return som/cotes.length 
+    } else {
+        for (let cote of cotes) {
+            if (cote < 6) {
+                console.log(`${etudiants.nom} a une case vide`)
+                
+            }
+        }
+        
+    }
+    
+}
+
+// fontion comparaison
+const compare = function(a,b) {
+    return b.moyenne - a.moyenne
+}
+for (let etudiant of etudiants ){
+    etudiant.moyenne = moyenne(etudiant.cotes)
+}
+
+etudiants.sort(compare)
+
+// affichage des resultat
+const format = function formatetudiant(etudiant) {
+    return `l'étudiant ${etudiant.nom} a obtenue une moyenne de ${etudiant.moyenne}`
+}
+
+
+    console.log(`
+    ${format(etudiants[0])}
+    ${format(etudiants[1])}
+    ${format(etudiants[2])}
+    ${format(etudiants[3])}
+
+ `)
+
+    </script>
+</body>
+</html>
